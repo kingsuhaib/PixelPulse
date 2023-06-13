@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PixelPulse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;500;600;700;800;900&display=swap');
+
+        :root {
+            --btn-color: #E0FF25;
+            --links-color: #849FA8;
+            --raleway-font: 'Raleway', sans-serif;
+            --poppins-font: 'Poppins', sans-serif;
+        }
+
+        input::file-selector-button {
+    font-weight: bold;
+    color: #E0FF25;
+    background-color: transparent;
+    padding: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
+    border-style: none;
+    
+    border-radius: 3px;
+}
+
+        html::-webkit-scrollbar
+        {
+            display: none ;
+        }
+        body {
+            background-image: url('{{ url_for("static", filename="images/bg2.png") }}');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .navbar
+        {
+            margin-right: 7rem;
+            margin-left: 6rem;
+        }
+        nav,
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul li {
+            padding: 1rem;
+        }
+
+        ul li a {
+            color: var(--links-color) !important;
+            text-decoration: none;
+            font-family: var(--poppins-font);
+            transition: 0.5s;
+        }
+
+        ul li a:hover {
+            color: white !important;
+        }
+
+        .try-now {
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 0.188rem;
+        }
+
+        /* Button */
+        .btn-outline {
+            outline: 0.188rem solid var(--btn-color) !important;
+            color: var(--btn-color) !important;
+            font-family: var(--poppins-font);
+            font-weight: 600 !important;
+            transition: 0.5s;
+        }
+
+        .btn-outline:hover {
+            color: #1E1E1E !important;
+            background-color: var(--btn-color) !important;
+        }
+
+        .btn-outline-dull {
+            outline: 0.188rem solid var(--links-color) !important;
+            color: var(--links-color);
+            font-weight: 600 !important;
+            color: white !important;
+            transition: 0.5s;
+
+        }
+
+        .btn-outline-dull:hover {
+            color: white;
+            background-color: var(--links-color);
+        }
+
+        /* main */
+        #main {
+             /* margin-top: 8%; */
+        }
+
+        .heading div {
+            font-family: var(--raleway-font);
+
+            color: white;
+            width: 65%;
+            text-align: center;
+            justify-content: center;
+            padding-top: 4rem;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: bold !important;
+        }
+
+        .heading {
+            display: flex;
+            justify-content: center;
+        }
+
+        .description {
+            display: flex;
+            justify-content: center;
+        }
+
+        .description div {
+            font-family: var(--raleway-font);
+            width: 50%;
+            color: white;
+            text-align: center;
+            justify-content: center;
+            /* padding: 0.5rem; */
+        }
+
+        p {
+            color: white;
+            text-align: center;
+            justify-content: center;
+            font-family: var(--raleway-font);
+            font-weight: bold !important;
+            font-size: 1.25rem;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        form input {
+            margin: 0.6rem;
+        }
+
+        input {
+            background-color: transparent;
+            width: 15%;
+            outline: 0.188rem solid var(--links-color) !important;
+            padding: 1rem;
+            /* height: important; */
+            border-radius: 0.188rem;
+            border: none;
+            color: var(--links-color);
+            font-weight: 500 !important;
+            font-size: 16px!important;
+            color: white !important;
+        }
+
+        #input-field {
+            width: 25%;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #input-field {
+                width: 75%;
+            }
+        }
+
+        h1,
+        p {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="navbar" style="padding-top: 30px;">
+        <nav>
+            <div>
+                <img src="{{ url_for("static", filename="images/logo.png") }}" alt="" srcset="">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Future</a></li>
+                    <li><a href="">Marker</a></li>
+                </ul>
+            </div>
+            <div>
+                <a href="" class="btn btn-outline try-now">Try Now</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="main">
+            <div class="main-content">
+                <div class="main-text">
+                    <div class="heading">
+                        <div>
+                            <h1>Elevate Web Exploration with Visual Intelligence</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <p>Discover a new dimension of web exploration as our AI-powered website scanner unveils the
+                            hidden
+                            elements within screenshots, marking every detail with precision and opening up endless
+                            possibilities.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <input type="file" class="btn btn-outline-dull" name="file" accept="image/*" required>
+                        <input type="submit" class="btn-outline" value="Detect" style="height: 82px;">
+                    </form>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

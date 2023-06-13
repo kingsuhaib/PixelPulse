@@ -1,0 +1,24 @@
+item {
+    id: 1
+    name: 'logo'
+}
+
+item {
+    id: 2
+    name: 'text'
+}
+
+item {
+    id: 3
+    name: 'button'
+}
+
+item {
+    id: 4
+    name: 'icons'
+}
+
+item {
+    id: 5
+    name: 'search box'
+}
